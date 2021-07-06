@@ -8,4 +8,10 @@
     <EmbeddedResource Include="Images/**/*.png"></EmbeddedResource>
   </ItemGroup>
 
+  <PropertyGroup>
+    <PackageId>HenHen.Resources</PackageId>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/Affectionate-Dove/HenHen-resources</RepositoryUrl>
+  </PropertyGroup>
+
 </Project>
