@@ -2,6 +2,8 @@ on:
   push:
     tags:
     - "[0-9]+.[0-9]+.[0-9]+.[0-9]+"
+    branches:
+    - "master"
     
 jobs:
   build:
@@ -21,7 +23,11 @@ jobs:
       run: dotnet build --configuration Release /p:Version=${VERSION}
     - name: Pack
       run: dotnet pack --configuration Release /p:Version=${VERSION} --no-build --output .
-    - name: Push
+    - name: Push nupkg to GitHub Packages
       run: dotnet nuget push HenHen.Resources.${VERSION}.nupkg --source https://nuget.pkg.github.com/Affectionate-Dove/index.json --api-key ${GITHUB_TOKEN}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Push nupkg to nuget.org
+      run: dotnet nuget push HenHen.Resources.${VERSION}.nupkg --api-key ${NUGET_TOKEN} --source https://api.nuget.org/v3/index.json
+      env:
+        NUGET_TOKEN: ${{ secrets.HENHEN_RESOURCES_NUGET_TOKEN }}
