@@ -1,17 +1,26 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+
   <ItemGroup>
-    <EmbeddedResource Include="Images/**/*.png"></EmbeddedResource>
+    <Content Include="Images/**/*.png">
+      <Pack>true</Pack>
+      <PackageCopyToOutput>true</PackageCopyToOutput>
+      <PackageFlatten>false</PackageFlatten>
+      <PackagePath>contentFiles\any\any\Images</PackagePath>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <PropertyGroup>
     <PackageId>HenHen.Resources</PackageId>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/Affectionate-Dove/HenHen-resources</RepositoryUrl>
+    <Authors>Affectionate Dove</Authors>
+    <Copyright>Copyright (c) Affectionate Dove 2021</Copyright>
   </PropertyGroup>
 
 </Project>
