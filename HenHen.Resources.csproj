@@ -15,11 +15,6 @@
     </Content>
   </ItemGroup>
 
-
-  <ItemGroup>
-    <Content Remove="Images\Backgrounds\MainMenu1.png" />
-  </ItemGroup>
-
   <PropertyGroup>
     <PackageId>HenHen.Resources</PackageId>
     <RepositoryType>git</RepositoryType>
